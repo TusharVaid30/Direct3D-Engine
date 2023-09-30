@@ -17,10 +17,10 @@ LRESULT CALLBACK WndProc(
 		PostMessage(hWnd, WM_QUIT, 1, lParam);
 		break;
 	case WM_KEYDOWN:
-		a++;
-		char message[63];
-		sprintf_s(message, "%d\n", a);
-		//SetWindowText(hWnd, message);
+		if (wParam == 'F')
+		{
+			PostMessage(hWnd, WM_QUIT, 1, lParam);
+		}
 		break;
 
 	case WM_CHAR:
